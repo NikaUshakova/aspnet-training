@@ -9,8 +9,23 @@ public class Program
 {
 	public static int CountVowels(string s)
 	{
-		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
-		return -1;
+		 if (s == null)
+        {
+            throw new ArgumentNullException("String is empty");
+        }
+        else
+        {
+            int count = 0;
+            char[] array = { 'a', 'e', 'i', 'o', 'u' };
+            for (int i = 0; i < s.Length; i++)
+            {
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (s[i] == array[j]) count++;
+                }
+            }
+            return count;
+        }
 	}
 
 	// ----- ЗАПРЕЩЕНО ИЗМЕНЯТЬ КОД МЕТОДОВ, КОТОРЫЕ НАХОДЯТСЯ НИЖЕ -----
